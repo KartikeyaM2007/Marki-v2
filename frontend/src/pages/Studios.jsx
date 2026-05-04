@@ -3,7 +3,8 @@ import { supabase } from "../lib/supabase";
 import "../styles/StudiosCSS.css";
 
 /* ─── BACKEND URL ─── */
-const BACKEND_URL = import.meta.env.VITE_BACKEND_URL || "http://localhost:5000";
+const BACKEND_URL = import.meta.env.VITE_BACKEND_URL || 
+  (import.meta.env.PROD ? window.location.origin : "http://localhost:5000");
 
 /* ─── CONSTANTS ─── */
 const PLATFORMS = [

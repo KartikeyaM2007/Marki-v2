@@ -174,9 +174,21 @@ app.post('/api/post-action', async (req, res) => {
   }
 });
 
-app.get('/', (req, res) => {
-  res.json({ message: 'Marki backend is running!' });
-});
+const path = require('path');
+const fs = require('fs');
+
+const distPath = path.join(__dirname, '../frontend/dist');
+if (fs.existsSync(distPath)) {
+  app.use(express.static(distPath));
+  app.get('*', (req, res) => {
+    if (req.path.startsWith('/api')) return res.status(404).json({ error: 'API route not found' });
+    res.sendFile(path.join(distPath, 'index.html'));
+  });
+} else {
+  app.get('/', (req, res) => {
+    res.json({ message: 'Marki backend is running!' });
+  });
+}
 
 app.listen(PORT, () => {
   console.log('\n' + '═'.repeat(60));
