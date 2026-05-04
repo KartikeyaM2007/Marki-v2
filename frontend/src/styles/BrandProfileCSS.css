@@ -1,18 +1,19 @@
-@import url('https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;1,9..40,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
 
 :root {
-  --bg: #05050F;
-  --surface: #0D0D20;
-  --surface2: #13132A;
-  --accent: #FFDC50;
-  --accent2: #FF6B6B;
-  --text: #F0F0FF;
-  --text-muted: rgba(240,240,255,0.55);
-  --border: rgba(255,255,255,0.07);
-  --font-display: 'Syne', sans-serif;
-  --font-body: 'DM Sans', sans-serif;
+  --bg: #000000;
+  --surface: #0A0A0A;
+  --surface2: #111111;
+  --accent: #FFFFFF;
+  --accent2: #888888;
+  --text: #FFFFFF;
+  --text-muted: rgba(255,255,255,0.45);
+  --border: rgba(255,255,255,0.08);
+  --font-display: 'Inter', sans-serif;
+  --font-body: 'Inter', sans-serif;
   --radius: 16px;
-  --glow: 0 0 60px rgba(255,220,80,0.08);
+  --glow: 0 0 60px rgba(255,255,255,0.04);
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 /* ─── PAGE WRAPPER ─── */
@@ -58,7 +59,7 @@
 }
 
 .bp-section:hover {
-  box-shadow: 0 0 0 1px rgba(255,220,80,0.08), var(--glow);
+  box-shadow: 0 0 0 1px rgba(255,255,255,0.06), var(--glow);
 }
 
 .bp-section-header {
@@ -148,8 +149,8 @@
 
 .bp-input:focus,
 .bp-textarea:focus {
-  border-color: rgba(255,220,80,0.4);
-  box-shadow: 0 0 0 3px rgba(255,220,80,0.07);
+  border-color: rgba(255,255,255,0.3);
+  box-shadow: 0 0 0 3px rgba(255,255,255,0.05);
 }
 
 .bp-textarea {
@@ -190,14 +191,14 @@
 }
 
 .bp-chip:hover {
-  border-color: rgba(255,220,80,0.3);
+  border-color: rgba(255,255,255,0.2);
   color: var(--text);
-  background: rgba(255,220,80,0.05);
+  background: rgba(255,255,255,0.04);
 }
 
 .bp-chip--active {
-  background: rgba(255,220,80,0.12);
-  border-color: rgba(255,220,80,0.45);
+  background: rgba(255,255,255,0.08);
+  border-color: rgba(255,255,255,0.3);
   color: var(--accent);
 }
 
@@ -268,7 +269,7 @@
   left: 0;
   top: 0;
   height: 100%;
-  background: linear-gradient(90deg, rgba(255,220,80,0.4), var(--accent));
+  background: linear-gradient(90deg, rgba(255,255,255,0.3), var(--accent));
   border-radius: 100px;
   pointer-events: none;
   transition: width 0.05s;
@@ -303,8 +304,8 @@
   display: inline-flex;
   align-items: center;
   gap: 0.35rem;
-  background: rgba(255,220,80,0.1);
-  border: 1px solid rgba(255,220,80,0.3);
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.2);
   color: var(--accent);
   font-size: 0.78rem;
   font-weight: 500;
@@ -344,8 +345,8 @@
 .bp-add-btn {
   padding: 0.65rem 1.1rem;
   border-radius: 10px;
-  border: 1px solid rgba(255,220,80,0.3);
-  background: rgba(255,220,80,0.08);
+  border: 1px solid rgba(255,255,255,0.2);
+  background: rgba(255,255,255,0.06);
   color: var(--accent);
   font-family: var(--font-body);
   font-size: 0.82rem;
@@ -356,8 +357,8 @@
 }
 
 .bp-add-btn:hover {
-  background: rgba(255,220,80,0.16);
-  border-color: rgba(255,220,80,0.55);
+  background: rgba(255,255,255,0.1);
+  border-color: rgba(255,255,255,0.35);
 }
 
 /* ─── PLATFORM CARDS ─── */
@@ -476,20 +477,20 @@
   border-radius: 100px;
   border: none;
   background: var(--accent);
-  color: #05050F;
+  color: #000;
   font-family: var(--font-display);
   font-size: 1rem;
   font-weight: 800;
   cursor: pointer;
   letter-spacing: -0.01em;
-  transition: all 0.25s ease;
-  box-shadow: 0 0 30px rgba(255,220,80,0.2);
+  transition: all 0.25s var(--ease-out);
+  box-shadow: 0 0 30px rgba(255,255,255,0.1);
 }
 
 .bp-submit:hover {
   background: #fff;
   transform: translateY(-3px);
-  box-shadow: 0 8px 30px rgba(255,220,80,0.35);
+  box-shadow: 0 8px 30px rgba(255,255,255,0.15);
 }
 
 .bp-submit-hint {

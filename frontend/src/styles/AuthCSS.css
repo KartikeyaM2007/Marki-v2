@@ -1,20 +1,21 @@
-@import url('https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
 
 :root {
-  --bg: #05050F;
-  --surface: #0D0D20;
-  --surface2: #13132A;
-  --accent: #FFDC50;
-  --accent-hover: #ffffff;
-  --text: #F0F0FF;
-  --text-muted: rgba(240, 240, 255, 0.5);
+  --bg: #000000;
+  --surface: #0A0A0A;
+  --surface2: #111111;
+  --accent: #FFFFFF;
+  --accent-hover: rgba(255,255,255,0.88);
+  --text: #FFFFFF;
+  --text-muted: rgba(255, 255, 255, 0.45);
   --border: rgba(255, 255, 255, 0.08);
-  --border-focus: rgba(255, 220, 80, 0.5);
+  --border-focus: rgba(255, 255, 255, 0.4);
   --error: #FF6B6B;
   --success: #5CFF8F;
-  --font-display: 'Syne', sans-serif;
-  --font-body: 'DM Sans', sans-serif;
+  --font-display: 'Inter', sans-serif;
+  --font-body: 'Inter', sans-serif;
   --radius: 14px;
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -39,9 +40,9 @@
   inset: 0;
   pointer-events: none;
   background:
-    radial-gradient(ellipse 55% 55% at 20% 20%, rgba(255,220,80,0.06) 0%, transparent 65%),
-    radial-gradient(ellipse 45% 45% at 80% 80%, rgba(255,107,107,0.04) 0%, transparent 65%),
-    radial-gradient(ellipse 35% 35% at 80% 20%, rgba(92,255,143,0.03) 0%, transparent 60%);
+    radial-gradient(ellipse 55% 55% at 20% 20%, rgba(255,255,255,0.02) 0%, transparent 65%),
+    radial-gradient(ellipse 45% 45% at 80% 80%, rgba(255,255,255,0.015) 0%, transparent 65%),
+    radial-gradient(ellipse 35% 35% at 80% 20%, rgba(255,255,255,0.01) 0%, transparent 60%);
   animation: bg-shift 10s ease-in-out infinite alternate;
 }
 
@@ -90,10 +91,10 @@
   position: relative;
   z-index: 5;
   box-shadow:
-    0 0 0 1px rgba(255,220,80,0.04),
-    0 24px 80px rgba(0, 0, 0, 0.5),
-    0 0 80px rgba(255,220,80,0.04);
-  animation: card-in 0.5s cubic-bezier(0.22, 1, 0.36, 1) both;
+    0 0 0 1px rgba(255,255,255,0.04),
+    0 24px 80px rgba(0, 0, 0, 0.7),
+    0 0 80px rgba(255,255,255,0.02);
+  animation: card-in 0.5s var(--ease-out) both;
 }
 
 @keyframes card-in {
@@ -108,7 +109,7 @@
   left: 10%;
   right: 10%;
   height: 2px;
-  background: linear-gradient(90deg, transparent, var(--accent), transparent);
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
   border-radius: 0 0 2px 2px;
   opacity: 0.6;
 }
@@ -222,8 +223,8 @@
 
 .auth-field__input-wrap input:focus {
   border-color: var(--border-focus);
-  background: rgba(255,220,80,0.03);
-  box-shadow: 0 0 0 3px rgba(255,220,80,0.08);
+  background: rgba(255,255,255,0.03);
+  box-shadow: 0 0 0 3px rgba(255,255,255,0.05);
 }
 
 .auth-field--error .auth-field__input-wrap input {
@@ -324,8 +325,8 @@
   margin-top: 0.5rem;
   width: 100%;
   padding: 0.95rem;
-  background: var(--accent);
-  color: #05050F;
+  background: #fff;
+  color: #000;
   border: none;
   border-radius: var(--radius);
   font-family: var(--font-display);
@@ -333,7 +334,7 @@
   font-weight: 700;
   letter-spacing: 0.01em;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: all 0.3s var(--ease-out);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -342,12 +343,12 @@
 }
 
 .auth-submit:hover:not(:disabled) {
-  background: var(--accent-hover);
+  background: rgba(255,255,255,0.88);
   transform: translateY(-2px);
-  box-shadow: 0 8px 28px rgba(255, 220, 80, 0.35);
+  box-shadow: 0 8px 28px rgba(255, 255, 255, 0.15);
 }
 
-.auth-submit:active:not(:disabled) { transform: translateY(0); }
+.auth-submit:active:not(:disabled) { transform: translateY(0) scale(0.97); }
 
 .auth-submit:disabled {
   cursor: not-allowed;
@@ -358,8 +359,8 @@
 .auth-submit__spinner {
   width: 20px;
   height: 20px;
-  border: 2.5px solid rgba(5,5,15,0.3);
-  border-top-color: #05050F;
+  border: 2.5px solid rgba(0,0,0,0.3);
+  border-top-color: #000;
   border-radius: 50%;
   animation: spin 0.7s linear infinite;
   display: inline-block;

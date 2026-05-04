@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
 
 .navbar {
   position: fixed;
@@ -10,35 +10,40 @@
   align-items: center;
   justify-content: space-between;
   padding: 1.2rem 3rem;
-  transition: all 0.4s ease;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
   background: transparent;
 }
 
 .navbar--scrolled {
-  background: rgba(5, 5, 15, 0.85);
-  backdrop-filter: blur(16px);
-  border-bottom: 1px solid rgba(255, 220, 80, 0.12);
+  background: rgba(0, 0, 0, 0.88);
+  backdrop-filter: blur(20px) saturate(1.2);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
   padding: 0.9rem 3rem;
-  box-shadow: 0 4px 40px rgba(0,0,0,0.3);
+  box-shadow: 0 4px 40px rgba(0,0,0,0.5);
 }
 
 .navbar__logo {
-  font-family: 'Syne', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-size: 1.7rem;
-  font-weight: 800;
+  font-weight: 900;
   color: #fff;
-  letter-spacing: -0.03em;
+  letter-spacing: -0.04em;
   display: flex;
   align-items: center;
   gap: 0.4rem;
   cursor: pointer;
   user-select: none;
+  transition: opacity 0.3s;
+}
+
+.navbar__logo:hover {
+  opacity: 0.8;
 }
 
 .navbar__logo-icon {
-  color: #FFDC50;
+  color: #fff;
   font-size: 1.2rem;
-  animation: spin-slow 6s linear infinite;
+  animation: spin-slow 8s linear infinite;
 }
 
 @keyframes spin-slow {
@@ -56,14 +61,14 @@
 }
 
 .navbar__link {
-  font-family: 'DM Sans', sans-serif;
-  font-size: 0.95rem;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.92rem;
   font-weight: 500;
-  color: rgba(255,255,255,0.75);
+  color: rgba(255,255,255,0.55);
   text-decoration: none;
   position: relative;
-  transition: color 0.3s ease;
-  letter-spacing: 0.01em;
+  transition: color 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  letter-spacing: -0.01em;
 }
 
 .navbar__link::after {
@@ -72,9 +77,9 @@
   bottom: -4px;
   left: 0;
   width: 0;
-  height: 2px;
-  background: #FFDC50;
-  transition: width 0.3s ease;
+  height: 1.5px;
+  background: #fff;
+  transition: width 0.3s cubic-bezier(0.16, 1, 0.3, 1);
   border-radius: 2px;
 }
 
@@ -87,29 +92,34 @@
 }
 
 .navbar__signup {
-  font-family: 'DM Sans', sans-serif;
-  font-size: 0.9rem;
-  font-weight: 500;
-  color: #05050F;
-  background: #FFDC50;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: #000;
+  background: #fff;
   text-decoration: none;
   padding: 0.55rem 1.4rem;
   border-radius: 100px;
   display: flex;
   align-items: center;
   gap: 0.4rem;
-  transition: all 0.3s ease;
-  letter-spacing: 0.01em;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  letter-spacing: -0.01em;
+  border: 1px solid rgba(255,255,255,0.15);
 }
 
 .navbar__signup:hover {
-  background: #fff;
+  background: rgba(255, 255, 255, 0.9);
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(255, 220, 80, 0.35);
+  box-shadow: 0 8px 30px rgba(255, 255, 255, 0.15);
+}
+
+.navbar__signup:active {
+  transform: translateY(0) scale(0.97);
 }
 
 .navbar__signup-arrow {
-  transition: transform 0.3s ease;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .navbar__signup:hover .navbar__signup-arrow {
@@ -161,13 +171,13 @@
     right: -100%;
     height: 100vh;
     width: 70%;
-    background: #05050F;
+    background: #000;
     flex-direction: column;
     justify-content: center;
     gap: 2rem;
     padding: 2rem;
-    transition: right 0.4s ease;
-    border-left: 1px solid rgba(255,220,80,0.1);
+    transition: right 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    border-left: 1px solid rgba(255,255,255,0.06);
   }
 
   .navbar__links--open {
@@ -183,36 +193,40 @@
     padding: 0.7rem 2rem;
   }
 }
-/* ─── ADD THESE STYLES TO YOUR NavigationBarCSS.css ─── */
 
 /* Dashboard nav link — highlighted */
 .navbar__link--dashboard {
-  color: var(--accent, #FFDC50) !important;
+  color: #fff !important;
   font-weight: 600;
 }
 
-/* Logout button — mirrors the Sign Up pill style */
+/* Logout button */
 .navbar__logout {
   display: inline-flex;
   align-items: center;
   gap: 0.4rem;
-  background: rgba(255, 107, 107, 0.12);
-  border: 1px solid rgba(255, 107, 107, 0.35);
-  color: #FF6B6B;
-  font-family: var(--font-body, 'DM Sans', sans-serif);
-  font-size: 0.88rem;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: rgba(255,255,255,0.7);
+  font-family: 'Inter', sans-serif;
+  font-size: 0.86rem;
   font-weight: 500;
   padding: 0.5rem 1.2rem;
   border-radius: 100px;
   cursor: pointer;
-  transition: all 0.25s ease;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
   white-space: nowrap;
 }
 
 .navbar__logout:hover {
-  background: rgba(255, 107, 107, 0.22);
-  border-color: rgba(255, 107, 107, 0.6);
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.25);
+  color: #fff;
   transform: translateY(-2px);
+}
+
+.navbar__logout:active {
+  transform: translateY(0) scale(0.97);
 }
 
 .navbar__logout-icon {

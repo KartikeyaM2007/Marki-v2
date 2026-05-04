@@ -1,20 +1,21 @@
-@import url('https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:ital,wght@0,400;0,500;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
 
 /* ─── CSS VARS ─── */
 :root {
-  --bg: #05050F;
-  --surface: #0D0D20;
-  --surface2: #13132A;
-  --accent: #FFDC50;
-  --accent2: #FF6B6B;
-  --text-primary: #F0F0FF;
-  --text: #F0F0FF;
-  --text-muted: rgba(240, 240, 255, 0.55);
-  --border: rgba(255, 255, 255, 0.07);
-  --font-display: 'Syne', sans-serif;
-  --font-body: 'DM Sans', sans-serif;
+  --bg: #000000;
+  --surface: #0A0A0A;
+  --surface2: #111111;
+  --accent: #FFFFFF;
+  --accent2: #888888;
+  --text-primary: #FFFFFF;
+  --text: #FFFFFF;
+  --text-muted: rgba(255, 255, 255, 0.45);
+  --border: rgba(255, 255, 255, 0.08);
+  --font-display: 'Inter', sans-serif;
+  --font-body: 'Inter', sans-serif;
   --radius: 16px;
-  --glow: 0 0 60px rgba(255, 220, 80, 0.08);
+  --glow: 0 0 60px rgba(255, 255, 255, 0.04);
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 /* ─── STUDIO LAYOUT ─── */
@@ -124,7 +125,7 @@
 }
 
 .prompt-box:focus-within {
-  border-color: rgba(255, 220, 80, 0.3);
+  border-color: rgba(255, 255, 255, 0.2);
 }
 
 .prompt-box textarea {
@@ -178,11 +179,11 @@
 
 .studio-select:focus {
   outline: none;
-  border-color: rgba(255, 220, 80, 0.3);
+  border-color: rgba(255, 255, 255, 0.2);
 }
 
 .studio-select option {
-  background: #13132A;
+  background: #111111;
 }
 
 .studio-input {
@@ -199,7 +200,7 @@
 
 .studio-input:focus {
   outline: none;
-  border-color: rgba(255, 220, 80, 0.3);
+  border-color: rgba(255, 255, 255, 0.2);
 }
 
 .studio-input::placeholder {
@@ -241,8 +242,8 @@
 }
 
 .platform-chip--active {
-  background: rgba(255, 220, 80, 0.1);
-  border-color: rgba(255, 220, 80, 0.35);
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.25);
   color: var(--accent);
 }
 
@@ -298,7 +299,7 @@
   border-radius: 12px;
   border: none;
   background: var(--accent);
-  color: #05050F;
+  color: #000;
   font-family: var(--font-display);
   font-size: 0.92rem;
   font-weight: 800;
@@ -314,7 +315,7 @@
 .btn-generate:hover {
   opacity: 0.9;
   transform: translateY(-1px);
-  box-shadow: 0 8px 24px rgba(255, 220, 80, 0.2);
+  box-shadow: 0 8px 24px rgba(255, 255, 255, 0.12);
 }
 
 .btn-generate:active {
@@ -331,8 +332,8 @@
 .btn-generate__spinner {
   width: 14px;
   height: 14px;
-  border: 2px solid rgba(5, 5, 15, 0.3);
-  border-top-color: #05050F;
+  border: 2px solid rgba(0, 0, 0, 0.3);
+  border-top-color: #000;
   border-radius: 50%;
   animation: spin 0.7s linear infinite;
   flex-shrink: 0;
@@ -427,8 +428,8 @@
 }
 
 .platform-tab--active {
-  background: rgba(255, 220, 80, 0.1);
-  border-color: rgba(255, 220, 80, 0.3);
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.25);
   color: var(--accent);
 }
 
@@ -514,8 +515,8 @@
 }
 
 .variation-pill--active {
-  border-color: rgba(255, 220, 80, 0.35);
-  background: rgba(255, 220, 80, 0.08);
+  border-color: rgba(255, 255, 255, 0.25);
+  background: rgba(255, 255, 255, 0.06);
   color: var(--accent);
 }
 
@@ -549,8 +550,8 @@
 }
 
 .post-card__textarea:focus {
-  border-color: rgba(255, 220, 80, 0.25);
-  background: rgba(255, 220, 80, 0.02);
+  border-color: rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.02);
 }
 
 .post-card__textarea::placeholder {
@@ -863,7 +864,7 @@
 }
 
 .toggle--on {
-  background: rgba(255, 220, 80, 0.4);
+  background: rgba(255, 255, 255, 0.35);
 }
 
 .toggle::after {
@@ -923,8 +924,8 @@
   width: 100%;
   padding: 0.72rem;
   border-radius: 12px;
-  border: 1px solid rgba(255, 220, 80, 0.3);
-  background: rgba(255, 220, 80, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.06);
   color: var(--accent);
   font-family: var(--font-body);
   font-size: 0.85rem;
@@ -938,8 +939,8 @@
 }
 
 .btn-schedule-confirm:hover {
-  background: rgba(255, 220, 80, 0.14);
-  border-color: rgba(255, 220, 80, 0.45);
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.3);
 }
 
 /* ─── WORD COUNT BADGE ─── */
@@ -956,7 +957,7 @@
 .post-card__overlay {
   position: absolute;
   inset: 0;
-  background: rgba(5, 5, 15, 0.65);
+  background: rgba(0, 0, 0, 0.65);
   border-radius: var(--radius);
   display: flex;
   align-items: center;
@@ -1008,14 +1009,14 @@
 
 /* SAVE BUTTON IMPROVEMENT */
 .post-action-btn--accent {
-  background: rgba(255, 220, 80, 0.1);
-  border: 1px solid rgba(255, 220, 80, 0.3);
-  color: #ffd84d;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #fff;
 }
 
 .post-action-btn--accent:hover {
-  background: rgba(255, 220, 80, 0.2);
-  border-color: rgba(255, 220, 80, 0.5);
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.3);
 }
 
 /* OPTIONAL: smooth delete animation */
